@@ -1,0 +1,19 @@
+## Interface: 30300
+## Title: RaidLevelScan
+## Notes: A tool for scanning the Benevolent Thuggery guild Raid Level
+## Author: Quaiche
+## Version: Alpha
+## X-Category: Misc
+## SavedVariables: RaidLevelScanDB
+## SavedVariablesPerCharacter: RaidLevelScanDBPC
+## OptionalDeps: tekDebug, tekErr
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+## X-License: Apache-2.0
+
+libs/LibStub.lua
+libs/CallbackHandler-1.0.lua
+libs/LibDataBroker-1.1.lua
+libs/tekKonfigAboutPanel.lua
+
+RaidLevelScan.lua

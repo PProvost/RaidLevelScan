@@ -1,0 +1,25 @@
+h2. Overview
+
+This addon is used by the guild Benevolent Thuggery of US-Dragonblight to scan and check the raid clearance
+of its members.
+
+h2. Bugs and Suggestions
+
+Please post any bugs and suggestions on the CurseForge project page. Thanks!
+
+h2. License
+
+Copyright 2010 Quaiche and Hauta
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
