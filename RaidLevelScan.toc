@@ -1,7 +1,7 @@
 ## Interface: 30300
 ## Title: RaidLevelScan
 ## Notes: A tool for scanning the Benevolent Thuggery guild Raid Level
-## Author: Quaiche
+## Author: Quaiche and Hauta
 ## Version: Alpha
 ## X-Category: Misc
 ## SavedVariables: RaidLevelScanDB
