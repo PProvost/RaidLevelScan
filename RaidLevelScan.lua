@@ -14,6 +14,17 @@
    limitations under the License.
 --]]
 
+local enchants = {
+	-- Head
+	[3818] = { Roles="Tank", RL1 = true, RL2 = true, RL3 = true }, -- Arcanum of the Stalwart Protector
+
+	-- Shoulder
+	-- Chest
+	-- etc
+}
+
+local equipSlots = {"HEADSLOT", "NECKSLOT", "SHOULDERSLOT", "BACKSLOT","CHESTSLOT", "WRISTSLOT", "WAISTSLOT", "LEGSSLOT", "FEETSLOT", "FINGER0SLOT", "FINGER1SLOT", "TRINKET0SLOT", "TRINKET1SLOT", "MAINHANDSLOT", }
+
 local L = setmetatable({}, {__index=function(t,i) return i end})
 local defaults, defaultsPC, db, dbpc = {}, {}
 
@@ -57,10 +68,32 @@ function f:PLAYER_LOGOUT()
 	-- Do anything you need to do as the player logs out
 end
 
+local function IsRaidLevel1()
+	local totalGreens = 0
+	for i,v in ipairs(equipSlots) do
+		local slotid = GetInventorySlotInfo(v)
+		local link = GetInventoryItemLink('target', slotid)
+		local name, link, quality, iLevel = GetItemInfo(link)
+		if quality == 2 then
+			totalGreens = totalGreens + 1
+		end
+	end
+
+	if totalGreens > 3 then
+		Print("Not RL1. Only 3 green pieces are allowed")
+		return nil
+	end
+	return true
+end
+
 SLASH_RAIDLEVELSCAN1 = "/raidlevelscan"
 SLASH_RAIDLEVELSCAN2 = "/rls"
 SlashCmdList.RAIDLEVELSCAN = function(msg)
-	-- Do crap here
+	if not UnitExists('target') or not UnitIsPlayer('target') then
+		Print("You must select a valid target first!")
+		return
+	end
+
 end
 
 local ldb = LibStub:GetLibrary("LibDataBroker-1.1")
